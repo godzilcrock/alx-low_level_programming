@@ -1,49 +1,24 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * print_times_table - prints times table
- * @n : times table to use
- * Return: void
+ * main - main block
+ *
+ * Return: 0.
  */
+int main(void)
 
-void print_times_table(int n)
 {
-	int a = 0, rep, b;
+	int c = 0;
+	int sum = 0;
 
-	if (n < 0 || n > 15)
-		return;
-
-	while (a <= n)
+	while (c < 1024)
 	{
-		for (b = 0; b <= n; b++)
+		if (c % 3 == 0 || c % 5 == 0)
 		{
-			rep = a * b;
-			if  (b == 0)
-				_putchar('0' + rep);
-			else if (rep < 10)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar('0' + rep);
-			}
-			else if (rep < 100)
-			{
-				_putchar(' ');
-				_putchar('0' + rep / 10);
-				_putchar('0' + rep % 10);
-			}
-			else
-			{
-				_putchar('0' + rep / 100);
-				_putchar('0' + (rep - 100) / 10);
-				_putchar('0' + rep % 10);
-			}
-			if (b < n)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			sum += c;
 		}
-		_putchar('\n');
-		a++;
+		c++;
 	}
+	printf("%i\n", sum);
+	return (0);
 }
